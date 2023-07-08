@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .counter {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="counter">Loading...</div>
+
+    <script>
+        // Define the starting date and time (23/08/2022, 12:00:00AM)
+        var startDate = new Date("August 23, 2022 00:00:00");
+        var currentDate = new Date();
+        var timeDifference = Math.floor((currentDate - startDate) / 1000);
+        var counterValue = 100 + (timeDifference * 6);
+        var counterElement = document.querySelector('.counter');
+
+        function updateCounter() {
+            counterElement.textContent = counterValue;
+            counterValue += 6;
+        }
+
+        updateCounter();
+        setInterval(updateCounter, 1000);
+    </script>
+</body>
+
+</html>
